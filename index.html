@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Image Gallery</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+   <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script> 
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
+
+  
+   
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+      <a-assets>
+        <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+        <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+        <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        </a-assets>
+      
+      <a-box  position = "1 1 -3" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"
+    
+           event-set__mouseenter="_event: click; _target: #image-360; src: #city"></a-box>
+      
+      <a-box c position = "0 1 -3" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg"
+    
+           event-set__mouseenter="_event: click; _target: #image-360; src: #cubes"></a-box>
+      
+      <a-box  position = "-1 1 -3" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"
+    
+           event-set__mouseenter="_event: click; _target: #image-360; src: #sechelt"></a-box>
+      
+      
+       <a-sphere  scale = "0.1 0.1 0.1" position = "0 3.5 -3" color = "purpule"
+    
+           event-set__mouseenter="_event: click; _target: "></a-sphere>
+      
+      <a-video  id="src0" src="https://cdn.glitch.global/71c889a9-eb07-47a1-84b5-79d38c267fd8/%D0%A0%D1%83%D0%B1%D1%86%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%20%D1%84%D0%B8%D0%BB%D0%B8%D0%B0%D0%BB%20%D0%90%D0%BB%D1%82%D0%93%D0%A3.mp4?v=1643439944371" width="3" height = "1.5" position = "0 2.5 -3" ></a-video>
+     
+
+     
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#city"
+             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+
+      
+    
+
+      <!-- Camera + cursor. -->
+     
+    </a-scene>
+    
+    
+  </body>
+</html>
+  
